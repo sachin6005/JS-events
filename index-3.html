@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+	<title>form page-3</title>
+    <style>
+        #register-form{
+            width: 200px;
+            background-color: blueviolet;
+            padding: 20px 30px 40px 50px;
+            margin: auto;
+          
+        }
+        .text-label{
+            margin: 4px 3px;
+        }
+        .text-box{
+            width: auto;
+            height: auto;
+        }
+    </style>
+            <script
+              src="https://kit.fontawesome.com/c758d930e9.js" crossorigin="anonymous">
+            </script>
+            <!-- <script src="index-3.js" type="text/javascript"></script> -->
+    </head>
+    <body style="background-color: rgb(119, 211, 124);">
+        <form id="register-form">
+            <h2 style="text-align: center;">Registration form</h2>
+            <div>
+                <p class="text-label" >Full Name</p><input id="fullname" class="text-box" type="text" name="name">
+            </div>
+            <div>
+                <p class="text-label">Email</p><input class="text-box" type="email" name="email">
+            </div>
+            <div>
+                <p class="text-label">Phone number</p><input class="text-box" type="tel" name="phone number">
+            </div>
+        
+            <div>
+                <p class="text-label">Hallticket number</p><input class="text-box" type="number" name="hallticket number">
+            </div>
+
+            <div>
+                <p class="text-label">Course</p><span>B-Tech <input class="text-box" type="radio" name="B-tech"> M-Tech <input type="radio" name="M-tech"></span>
+            </div>
+            <div>
+                <p class="text-label">Branch</p>
+                <select>
+                        <option value="Mechanical">Mechanical</option>
+                        <option value="Civil">Civil</option>
+                        <option value="CSE">CSE</option>
+                        <option value="ECE">ECE</option>
+                        <option value="EEE">EEE</option>
+                </select> 
+            </div>
+            <button style="margin: 10px;">Register<i class="far fa-registered"></i></i></button>
+            
+        </form>
+        <script>
+            //form event-- change
+
+var name1 = document.getElementById('fullname')
+console.log(name1)
+name1.addEventListener('change', function(){
+console.log('fullname is changed')
+})
+
+//form event-- input
+
+name1.addEventListener('input', function(){
+console.log('fullname is changed')
+
+//form event-- input (to findout each letter)
+console.log(event.target.value)
+})
+
+//form event-- input (uppercase)
+
+name1.addEventListener('input', function(){ 
+    var up = event.target.value
+    up = up.toUpperCase()
+    console.log(up)
+})
+
+//form event-- focus
+
+name1.addEventListener('focus', function(){
+console.log('focused')
+})
+
+//form event -  blur
+
+name1.addEventListener('blur', function(){
+console.log('not focused')
+})
+//form event -  submit
+
+var reg = document.getElementById('register-form')
+reg.addEventListener('submit', function(){
+    alert('form submitted')
+    e.preventDefault()
+})
+
+        </script>
+       
+    </body>
+    </html>
